@@ -1,8 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    RenderMode renderMode = RenderMode.Server;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <title>VideoSummarizer</title>
+</head>
+
+<body>
+    <main>
+        <section class="std-section">
+            <div class="main-container">
+                <div class="mb-3">
+                    <label for="" class="form-label">Суммаризировать видео по ссылке</label>
+                    <input type="text" class="form-control" name="url" id="" aria-describedby="helpId"
+                        placeholder="Укажите ссылку аа видео YouTube" />
+                    <small id="helpId" class="form-text text-muted">Ссылка</small>
+                </div>
+
+                <div class="mb-3">
+                    <input type="number" class="form-control" name="wordsCount" id="" aria-describedby="helpId"
+                        placeholder="Укажите количество слов" />
+                    <small id="helpId" class="form-text text-muted">От 10 слов</small>
+                </div>
+
+
+                <label class="btn btn-primary active">
+                    <input type="checkbox" class="me-2" name="" id="" checked autocomplete="off" />
+                    Показать исходный текст
+                </label>
+
+            </div>
+            <input class="btn btn-primary active" type="submit" name="summarizeBtn" id="">
+        </section>
+    </main>
+</body>

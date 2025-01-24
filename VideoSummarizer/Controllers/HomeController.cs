@@ -7,9 +7,11 @@ namespace VideoSummarizer.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private IHttpContextAccessor _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IHttpContextAccessor context)
     {
+        _context = context;
         _logger = logger;
     }
 
