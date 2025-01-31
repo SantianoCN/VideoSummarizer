@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AssemblyAI" Version="1.2.0" />
+    <PackageReference Include="VideoLibrary" Version="3.2.6" />
+  </ItemGroup>
+
 </Project>

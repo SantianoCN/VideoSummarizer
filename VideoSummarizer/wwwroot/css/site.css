@@ -50,10 +50,18 @@ body {
     align-self: center;
 }
 
-.btn-area{
-    text-align: center;
+.btn-area {
+    margin-top: 4vh;
+} 
+
+.content-area {
+    margin-top: 8vh;
 }
 
+.progress-area {
+    margin-top: 2vh;
+    justify-self: center;
+}
 
 .std-section {
     display: inline;

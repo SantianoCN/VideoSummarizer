@@ -1,10 +1,40 @@
-using System.Text.Json;
+using AssemblyAI;
+using VideoSummarizer.Services;
 using VideoSummarizer.Middlewares;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+builder.Services.AddMvcCore();
+builder.Services.AddSingleton<IRazorViewEngine, RazorViewEngine>();
+builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddScoped<AssemblyAIClient>(provider => {
+
+    var apiKey = builder.Configuration["ApiKeys:Transcription"];
+    if (apiKey == "") throw new Exception("Api key is not defined");
+
+    return new AssemblyAIClient(apiKey);
+});
+
+builder.Services.AddScoped<HttpClient>(provider => {
+
+    var apiKey = builder.Configuration["ApiKeys:Summarization"];
+    
+    var client = new HttpClient();
+
+    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + apiKey);
+    
+    return client;
+});
+
+builder.Services.AddScoped<ITranscriptorService, TranscriptorService>();
+builder.Services.AddScoped<ISummarizatorService, SummarizatorService>();
 
 var app = builder.Build();
 
@@ -17,11 +47,10 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
 app.UseRouting();
 
-app.UseAuthorization();
-
-app.UseToken("123");
+app.UseMiddleware<FileTypeValidationMiddleware>();
 
 app.MapControllerRoute(
     name: "default",
@@ -35,14 +64,15 @@ app.MapControllerRoute(
     name: "signin",
     pattern: "{controller=Authorization}/{action=SignIn}");
 
+app.MapControllerRoute(
+    name: "videoProcessing",
+    pattern: "{controller=VideoProcessing}/{action=Index}"
+);
+
+app.MapRazorPages();
 
 app.Run();
 
 record class Person(string name, string surname, string patronymic, int age);
 
 
-static class AuthExtensions {
-    public static IApplicationBuilder UseToken(this IApplicationBuilder builder, string pattern){
-        return builder.UseMiddleware<AuthorizationMiddleware>(pattern); 
-    }
-} 

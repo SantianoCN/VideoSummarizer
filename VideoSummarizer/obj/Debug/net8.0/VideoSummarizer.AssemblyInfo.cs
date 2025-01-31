@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VideoSummarizer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a761fb4070be0aa912f2f7ef86f54cdb5311f6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb446bba3c82e26be7c26ef01f91d3d0fa5f104b")]
 [assembly: System.Reflection.AssemblyProductAttribute("VideoSummarizer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VideoSummarizer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

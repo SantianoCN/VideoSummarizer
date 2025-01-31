@@ -1,36 +1,53 @@
-﻿@{
-    RenderMode renderMode = RenderMode.Server;
-}
-
-<head>
-    <title>VideoSummarizer</title>
-</head>
-
-<body>
-    <main>
-        <section class="std-section">
-            <div class="main-container">
-                <div class="mb-3">
-                    <label for="" class="form-label">Суммаризировать видео по ссылке</label>
-                    <input type="text" class="form-control" name="url" id="" aria-describedby="helpId"
-                        placeholder="Укажите ссылку аа видео YouTube" />
-                    <small id="helpId" class="form-text text-muted">Ссылка</small>
-                </div>
-
-                <div class="mb-3">
-                    <input type="number" class="form-control" name="wordsCount" id="" aria-describedby="helpId"
-                        placeholder="Укажите количество слов" />
-                    <small id="helpId" class="form-text text-muted">От 10 слов</small>
-                </div>
+﻿@model VideoSummarizer.Models.TranscriptionViewModel
 
 
-                <label class="btn btn-primary active">
-                    <input type="checkbox" class="me-2" name="" id="" checked autocomplete="off" />
-                    Показать исходный текст
-                </label>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/jrequest.js"></script>
 
-            </div>
-            <input class="btn btn-primary active" type="submit" name="summarizeBtn" id="">
-        </section>
-    </main>
-</body>
+<section class="std-section">
+    <div class="main-container">
+
+        <div class="mb-3">
+            <label for="" class="form-label">Суммаризировать видео</label>
+            <input type="file" class="form-control" id="fileInput" name="" aria-describedby="helpId"
+                placeholder="Выберите видео на компьютере" />
+            <small id="helpId" class="form-text text-muted">Видео или аудио в формате mp4, avi, wav.. </small>
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" id="wordsCount" name="" aria-describedby="helpId"
+                placeholder="Укажите количество слов" />
+            <small id="helpId" class="form-text text-muted">От 10 слов</small>
+        </div>
+        <label class="btn btn-primary active">
+            <input type="checkbox" class="me-2" id="getFullText" name="" checked autocomplete="off" />
+            Показать исходный текст
+        </label>
+    </div>
+    <div class="btn-area">
+        <div class="text-center">
+            <button class="btn btn-primary active" type="submit" id="summarizeBtn"
+                name="summarizeBtn">Суммаризировать</button>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="progress-area">
+        <div class="progress">
+        <div
+                class="progress-bar bg-primary"
+                id="progressbar"
+                role="progressbar"
+                style="width: 0%;"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+            > Загрузка транскрипции
+        </div>
+    </div>
+    </div>
+    <div class="content-area">
+        <div class="text-center" id="output">
+            
+        </div>
+    </div>
+</section>
