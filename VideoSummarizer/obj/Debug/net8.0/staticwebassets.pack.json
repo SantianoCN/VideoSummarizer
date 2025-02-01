@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/projectbundle/VideoSummarizer.bundle.scp.css",
-      "PackagePath": "staticwebassets/VideoSummarizer.rygt166awg.bundle.scp.css"
+      "PackagePath": "staticwebassets/VideoSummarizer.0ci4hbht07.bundle.scp.css"
     },
     {
       "Id": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/css/site.css",
@@ -13,8 +13,20 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/VideoSummarizerLogoDark.png",
+      "PackagePath": "staticwebassets/images/VideoSummarizerLogoDark.png"
+    },
+    {
+      "Id": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/VideoSummarizerLogoLight.png",
+      "PackagePath": "staticwebassets/images/VideoSummarizerLogoLight.png"
+    },
+    {
       "Id": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/jrequest.js",
       "PackagePath": "staticwebassets/js/jrequest.js"
+    },
+    {
+      "Id": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/jstyle.js",
+      "PackagePath": "staticwebassets/js/jstyle.js"
     },
     {
       "Id": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/site.js",

@@ -4,7 +4,64 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="~/js/jrequest.js"></script>
 
-<section class="std-section">
+<h2 id="mainInfo">Загрузите видео или аудио файл для создания краткого содержания</h2>
+<section class="input-panel-area">
+    <div class="mb-3">
+        <label id="fileInput" class="form-label">Выбрать файл</label>
+        <input type="file" class="form-control" id="fileUpload" aria-describedby="helpId"
+            placeholder="Выберите видео или аудио файл" />
+        <small id="helpId">Поддерживаеются файлы в формате mp4, avi, mov, mp3, ogg и др.</small>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Количество слов: <input type="number" id="wordsCountInput" value="200"
+                onchange="rangeHandChange()"></label><br>
+        <input type="range" id="words-count-selector" onpointermove="rangeShowValue()" min="10" max="3000" value="200"
+            width="2000"><br>
+        <small>От 10 до 3000 слов</small>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Исходный текст</label><br>
+        <input type="checkbox" class="custom-checkbox" id="showSourceText" value="yes">
+        <small>Показать субтитры из видео/аудио</small>
+    </div>
+    <div class="additional-area-checkbox">
+        <label class="form-label">Дополонительные опции</label><br>
+        <input type="checkbox" onclick="useAdditionalTask()" class="custom-checkbox" id="useAdditionalTask" value="no">
+        <small>Укажите Дополонительные параметры для работы слов текстом</small>
+    </div>
+</section>
+<div class="additional-area" id="additional-area">
+    <label id="fileInput" class="form-label">Опции</label>
+    <input type="text" class="form-control" id="additionalTask" aria-describedby="helpId"
+        placeholder="Разбей текст на подтемы"/>
+</div>
+<div class="btn-container">
+    <button type="submit" id="summarizeBtn" onclick="summBtnClick()" class="summ-btn"> Суммаризировать
+    </button>
+</div>
+<section class="content-panel-area">
+    <div class="source-text-area">
+        <div class="text-area-header">
+            <h5>Исходный текст</h5>
+        </div>
+        <div class="text-area-content" id="source-text-output">
+            <!-- Source text -->
+        </div>
+    </div>
+    <div class="result-text-area">
+        <div class="text-area-header">
+            <h5>Краткое содержание</h5>
+        </div>
+        <div class="text-area-content" id="result-text-output">
+            <!-- Result output -->
+        </div>
+    </div>
+</section>
+<section class="user-documentation-area">
+</section>
+
+
+@* <section class="std-section">
     <div class="main-container">
 
         <div class="mb-3">
@@ -47,7 +104,7 @@
     </div>
     <div class="content-area">
         <div class="text-center" id="output">
-            
+
         </div>
     </div>
-</section>
+</section> *@

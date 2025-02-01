@@ -37,7 +37,7 @@ public class SummarizatorService : ISummarizatorService
         {
             task += $"Максимальное количество слов в получившемся тексте не более: {wordsCount} слов.";
         }
-        if (options != "")
+        if (options is not null && options != "")
         {
             task += $"Так же нужно выполнить следующие операции с текстом: {options}";
         }

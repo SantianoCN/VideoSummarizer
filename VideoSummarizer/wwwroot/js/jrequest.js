@@ -1,110 +1,71 @@
 $(document).ready(function () {
-    const fileInput = document.getElementById('fileInput');
-
-
+    const fileInput = document.getElementById('fileUpload');
 
     $("#summarizeBtn").click(function () {
+        sendRequest();
+    });
+
+    async function sendRequest() {
         const file = fileInput.files[0];
+        const wordsCount = document.getElementById('wordsCountInput').value;
+        const showSourceText = document.getElementById('showSourceText').checked;
+        const additionalTask = document.getElementById('additionalTask').value;
 
         if (!file) {
             alert("Выберите файл для загрузки.");
             return;
         }
 
-
         const formData = new FormData();
         formData.append('file', file);
+        formData.append('wordsCount', wordsCount);
+        formData.append('showSourceText', showSourceText);
+        formData.append('additionalTask', additionalTask);
 
-        const xhr = new XMLHttpRequest();
+        const request = await fetch('/VideoProcessing/upload', {
+            body: formData,
+            method: "post"
+        });
+        let data = await request.json();
 
-        xhr.open('POST', '/VideoProcessing/upload');    // адрес контроллера
-        xhr.upload.onprogress = (event) => {
-            if (event.lengthComputable) {
-                const percentComplete = (event.loaded / event.total) * 100;
-                console.log(`Загрузка: ${percentComplete.toFixed(2)}%`);
-            }
+        onAjaxSuccess(data);
+    }
+
+    function onAjaxSuccess(response) {
+        console.log('Ответ от сервера:', response);
+
+        const element1 = document.getElementById('source-text-output');
+
+        if (response.sourceText != "") {
+            element1.innerHTML = `<p>${response.sourceText}</p>`;
         }
 
-        async function render(element, data, html) {
-            for (let i = 0; i < data.text.length; i++) {
-                html += `${data.text[i]}`;
-                element.innerHTML = html;
-                await delay(20);
-            }
+        const element = document.getElementById('result-text-output');
+
+        let html = '';
+        html += `<p><strong>`;
+        element.innerHTML = html;
+
+        render(element, response, html);
+
+        html = `</strong></p>`;
+        element.innerHTML = html;
+    }
+
+    function onAjaxError(xhr, status, error) {
+        console.error('Ошибка при отправке запроса:', error);
+        alert('Произошла ошибка при отправке запроса. Проверьте консоль для подробностей.');
+    }
+
+    async function render(element, data, html) {
+        for (let i = 0; i < data.summary.length; i++) {
+            html += `${data.summary[i]}`;
+            element.innerHTML = html;
+            await delay(20);
         }
+    }
 
-        function delay(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-
-        xhr.onloadstart = () => {
-            const progressbar = document.getElementById('progressbar');
-
-            let i = 0;
-            function update() {
-                if (i <= 100) {
-                    progressbar.setAttribute('aria-valuenow', `${i}`);
-                    progressbar.style.width = `${i}%`;
-
-                    i++;
-                    setTimeout(update, 50)
-                }
-            }
-            update();
-        }
-
-        xhr.onload = () => {
-            const progressbar = document.getElementById('progressbar');
-            progressbar.setAttribute('aria-valuenow', `${0}`);
-            progressbar.style.width = `${0}%`;
-
-            if (xhr.status >= 200 && xhr.status < 300) {
-                const element = document.getElementById('output');
-                let data = JSON.parse(xhr.response);
-
-                let html = '';
-                element.innerHTML -= `Идет загрузка транскрипции..`;
-                html += `<p><strong>`;
-                element.innerHTML = html;
-
-                render(element, data, html);
-
-                html = `</strong></p>`;
-                element.innerHTML = html;
-
-                console.log('Ответ получен.');
-            } else {
-                const element = document.getElementById('output');
-
-                let data = {
-                    message: ""
-                };
-
-                let errorData = JSON.parse(xhr.response);
-
-                element.innerHTML = `<h2><strong style="color: darkred">Ошибка: ${errorData.message}</strong></h2>`;
-            }
-        }
-
-        xhr.onerror = () => {
-            console.error('Ошибка сервера.');
-            alert('500 Ошибка сервера.');
-        }
-
-        xhr.send(formData);
-
-        // var data = {
-        //     WordsCount: $("#wordsCount").val(),
-        //     GetFullText: $("#getFullText").is(":checked")
-        // };
-
-        // $.ajax({
-        //     url: '/VideoProcessing/upload',
-        //     type: 'POST',
-        //     data: JSON.stringify(data),
-        //     contentType: "application/json",
-        //     dataType: "json",
-        //     success: onAjaxSuccess
-        // });
-    });
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 });

@@ -9,14 +9,17 @@ using Microsoft.AspNetCore.Identity;
 namespace VideoSummarizer.Controllers;
 
 [Route("VideoProcessing")]
-public class VideoProcessingController : Controller {
+public class VideoProcessingController : Controller
+{
+    private IFormFile file;
     private readonly ILogger<HomeController> _logger;
     private readonly IConfiguration _configuration;
     private readonly IHttpContextAccessor _context;
     private readonly ITranscriptorService _transcriptor;
     private readonly ISummarizatorService _summarizator;
-    
-    public VideoProcessingController(ILogger<HomeController> logger, IConfiguration configuration, IHttpContextAccessor context, ITranscriptorService transcriptor, ISummarizatorService summarizator) {
+
+    public VideoProcessingController(ILogger<HomeController> logger, IConfiguration configuration, IHttpContextAccessor context, ITranscriptorService transcriptor, ISummarizatorService summarizator)
+    {
         _logger = logger;
         _configuration = configuration;
         _context = context;
@@ -24,62 +27,77 @@ public class VideoProcessingController : Controller {
         _summarizator = summarizator;
     }
     [HttpGet]
-    public IActionResult Index(){
+    public IActionResult Index()
+    {
         return View("../Home/Index");
     }
 
     [HttpPost("yt")]
-    public async Task<IActionResult> CreateNewSummaryFromYT([FromBody] VideoProcessingYTViewModel model) 
+    public async Task<IActionResult> CreateNewSummaryFromYT([FromBody] VideoProcessingYTViewModel model)
     {
-        if (!ModelState.IsValid){
+        if (!ModelState.IsValid)
+        {
             return BadRequest("Uncurrect data");
         }
 
         var yt = YouTube.Default;
-        
+
         var video = yt.GetVideo(model.ResourceUrl);
         string fileName = new Guid().ToString();
-        
-        await Task.Run(() => {
+
+        await Task.Run(() =>
+        {
             System.IO.File.WriteAllBytes($"~uploads/vid{fileName}.mp4", video.GetBytes());
         });
-        
+
         return Ok("Ready");
     }
 
 
     [HttpPost("upload")]
-    public async Task<IActionResult> CreateNewSummaryFromFile(IFormFile file){
+    public async Task<IActionResult> CreateNewSummaryFromFile([FromForm] IFormFile file, [FromForm] int wordsCount,
+        [FromForm] bool showSourceText, [FromForm] string additionalTask){
         string text = "";
-
-        // var modelTest = new TranscriptionViewModel {
-        //     Text = "This is some long long text, for testing, how it work."
-        // };
-        // Thread.Sleep(5000);
-
-        // return Json(modelTest);
-
-        using (var fileStream = new FileStream("../uploads", FileMode.Create, FileAccess.Write)) {
+        
+        using (var fileStream = new FileStream("../uploads", FileMode.Create, FileAccess.Write))
+        {
             await file.CopyToAsync(fileStream);
         }
-        using (var fileStream = new FileStream("../uploads", FileMode.Open, FileAccess.Read)) {
-            var task = Task.Run(async () => {
+        using (var fileStream = new FileStream("../uploads", FileMode.Open, FileAccess.Read))
+        {
+            var task = Task.Run(async () =>
+            {
                 return await _transcriptor.GetTranscription(fileStream);
             });
 
-            await task.ContinueWith((task) => {
+            await task.ContinueWith((task) =>
+            {
                 fileStream.Close();
             });
 
             text = task.Result;
         }
-        
-        if (text.Split(" ").Length < 20) {
+
+        if (text.Split(" ").Length < 20)
+        {
             return BadRequest("Текст видео слишком короткий");
         }
 
-        return Json(new {
-            text = await _summarizator.GetSummary(text, 0, "")
-        });
+        if (showSourceText)
+        {
+            return Json(new
+            {
+                summary = await _summarizator.GetSummary(text, wordsCount, additionalTask),
+                sourceText = text
+            });
+        }
+        else
+        {
+            return Json(new
+            {
+                summary = await _summarizator.GetSummary(text, wordsCount, additionalTask),
+                sourceText = ""
+            });
+        }
     }
 }
