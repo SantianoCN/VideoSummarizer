@@ -24,11 +24,12 @@ builder.Services.AddScoped<AssemblyAIClient>(provider => {
 
 builder.Services.AddScoped<HttpClient>(provider => {
 
+    // here using api static key, not iam token
     var apiKey = builder.Configuration["ApiKeys:Summarization"];
     
     var client = new HttpClient();
 
-    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + apiKey);
+    client.DefaultRequestHeaders.Add("Authorization", "Api-Key " + apiKey);
     
     return client;
 });

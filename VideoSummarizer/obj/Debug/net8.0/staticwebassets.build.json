@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iG6biY/nMqa9yJM3JGYGB7TbG62yVsqiavxrC+LXuOM=",
+  "Hash": "fOqPqaQUwZ21y2iQnjp1oeOrWvvXomLUj351NpGLWFQ=",
   "Source": "VideoSummarizer",
   "BasePath": "_content/VideoSummarizer",
   "Mode": "Default",
@@ -17,48 +17,6 @@
   ],
   "Assets": [
     {
-      "Identity": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/bundle/VideoSummarizer.styles.css",
-      "SourceId": "VideoSummarizer",
-      "SourceType": "Computed",
-      "ContentRoot": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/bundle/",
-      "BasePath": "_content/VideoSummarizer",
-      "RelativePath": "VideoSummarizer#[.{fingerprint}]?.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "0ci4hbht07",
-      "Integrity": "ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/bundle/VideoSummarizer.styles.css"
-    },
-    {
-      "Identity": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/projectbundle/VideoSummarizer.bundle.scp.css",
-      "SourceId": "VideoSummarizer",
-      "SourceType": "Computed",
-      "ContentRoot": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/projectbundle/",
-      "BasePath": "_content/VideoSummarizer",
-      "RelativePath": "VideoSummarizer#[.{fingerprint}]!.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "0ci4hbht07",
-      "Integrity": "ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/projectbundle/VideoSummarizer.bundle.scp.css"
-    },
-    {
       "Identity": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/css/site.css",
       "SourceId": "VideoSummarizer",
       "SourceType": "Discovered",
@@ -73,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5rj0q6350j",
-      "Integrity": "//lUTd8txBuIBlGJO+kGT2e1nsWOCKze5iDHK9nN2tU=",
+      "Fingerprint": "vtzlr5q08e",
+      "Integrity": "o3dgNBAxcCV6pknrjvjkJKt9SiJtJTVilHxzhNOGA3I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -99,6 +57,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/copy-dark.png",
+      "SourceId": "VideoSummarizer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/",
+      "BasePath": "_content/VideoSummarizer",
+      "RelativePath": "images/copy-dark#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ev9gkwamik",
+      "Integrity": "Bja9XIuSsPy+b/KMav0uDiFd+g8BystZGhrvDj/m/XY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/copy-dark.png"
+    },
+    {
+      "Identity": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/copy-light.png",
+      "SourceId": "VideoSummarizer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/",
+      "BasePath": "_content/VideoSummarizer",
+      "RelativePath": "images/copy-light#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ioygvi5hz5",
+      "Integrity": "kqrqERg8FGAoMVKPIzIEjF95yEbrUKFoiScmkONLo4Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/copy-light.png"
     },
     {
       "Identity": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/VideoSummarizerLogoDark.png",
@@ -157,8 +157,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d1b0zcffy3",
-      "Integrity": "H2UJIMT2B4vH96msNmhk/DEgghV4zPDsGXSa0fr0XCs=",
+      "Fingerprint": "s6rcow5qvz",
+      "Integrity": "pHydPeIo1KMD+BXwbvB0fiNFXN4q+8BDxkdtcK1bq9s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/jrequest.js"
@@ -178,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "hm992uwkpw",
-      "Integrity": "+RJxYpBxLyEz57MUfldDB+I/hdO4WTWjCvesIj9P4yg=",
+      "Fingerprint": "4kp75alpf1",
+      "Integrity": "3GWcDi+BehDaf7V3bSdAXnPBFde+eLKrI0WQj0Ib8Rs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/jstyle.js"
@@ -1405,51 +1405,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.5rj0q6350j.css",
-      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/css/site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7283"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"//lUTd8txBuIBlGJO+kGT2e1nsWOCKze5iDHK9nN2tU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 01 Feb 2025 01:33:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "5rj0q6350j"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-//lUTd8txBuIBlGJO+kGT2e1nsWOCKze5iDHK9nN2tU="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/css/site.css",
       "Selectors": [],
@@ -1460,7 +1415,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7283"
+          "Value": "8192"
         },
         {
           "Name": "Content-Type",
@@ -1468,11 +1423,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"//lUTd8txBuIBlGJO+kGT2e1nsWOCKze5iDHK9nN2tU=\""
+          "Value": "\"o3dgNBAxcCV6pknrjvjkJKt9SiJtJTVilHxzhNOGA3I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 01 Feb 2025 01:33:01 GMT"
+          "Value": "Sat, 01 Feb 2025 16:47:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1482,7 +1437,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-//lUTd8txBuIBlGJO+kGT2e1nsWOCKze5iDHK9nN2tU="
+          "Value": "sha256-o3dgNBAxcCV6pknrjvjkJKt9SiJtJTVilHxzhNOGA3I="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.vtzlr5q08e.css",
+      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8192"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"o3dgNBAxcCV6pknrjvjkJKt9SiJtJTVilHxzhNOGA3I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Feb 2025 16:47:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vtzlr5q08e"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-o3dgNBAxcCV6pknrjvjkJKt9SiJtJTVilHxzhNOGA3I="
         }
       ]
     },
@@ -1565,6 +1565,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/copy-dark.ev9gkwamik.png",
+      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/copy-dark.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "250"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Bja9XIuSsPy+b/KMav0uDiFd+g8BystZGhrvDj/m/XY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Feb 2025 15:39:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ev9gkwamik"
+        },
+        {
+          "Name": "label",
+          "Value": "images/copy-dark.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Bja9XIuSsPy+b/KMav0uDiFd+g8BystZGhrvDj/m/XY="
+        }
+      ]
+    },
+    {
+      "Route": "images/copy-dark.png",
+      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/copy-dark.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "250"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Bja9XIuSsPy+b/KMav0uDiFd+g8BystZGhrvDj/m/XY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Feb 2025 15:39:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Bja9XIuSsPy+b/KMav0uDiFd+g8BystZGhrvDj/m/XY="
+        }
+      ]
+    },
+    {
+      "Route": "images/copy-light.ioygvi5hz5.png",
+      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/copy-light.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "259"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kqrqERg8FGAoMVKPIzIEjF95yEbrUKFoiScmkONLo4Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Feb 2025 15:40:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ioygvi5hz5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/copy-light.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kqrqERg8FGAoMVKPIzIEjF95yEbrUKFoiScmkONLo4Q="
+        }
+      ]
+    },
+    {
+      "Route": "images/copy-light.png",
+      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/images/copy-light.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "259"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kqrqERg8FGAoMVKPIzIEjF95yEbrUKFoiScmkONLo4Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Feb 2025 15:40:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kqrqERg8FGAoMVKPIzIEjF95yEbrUKFoiScmkONLo4Q="
         }
       ]
     },
@@ -1733,51 +1897,6 @@
       ]
     },
     {
-      "Route": "js/jrequest.d1b0zcffy3.js",
-      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/jrequest.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2269"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"H2UJIMT2B4vH96msNmhk/DEgghV4zPDsGXSa0fr0XCs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 01 Feb 2025 01:30:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "d1b0zcffy3"
-        },
-        {
-          "Name": "label",
-          "Value": "js/jrequest.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-H2UJIMT2B4vH96msNmhk/DEgghV4zPDsGXSa0fr0XCs="
-        }
-      ]
-    },
-    {
       "Route": "js/jrequest.js",
       "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/jrequest.js",
       "Selectors": [],
@@ -1788,7 +1907,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2269"
+          "Value": "3722"
         },
         {
           "Name": "Content-Type",
@@ -1796,11 +1915,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"H2UJIMT2B4vH96msNmhk/DEgghV4zPDsGXSa0fr0XCs=\""
+          "Value": "\"pHydPeIo1KMD+BXwbvB0fiNFXN4q+8BDxkdtcK1bq9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 01 Feb 2025 01:30:30 GMT"
+          "Value": "Sat, 01 Feb 2025 16:30:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1810,13 +1929,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-H2UJIMT2B4vH96msNmhk/DEgghV4zPDsGXSa0fr0XCs="
+          "Value": "sha256-pHydPeIo1KMD+BXwbvB0fiNFXN4q+8BDxkdtcK1bq9s="
         }
       ]
     },
     {
-      "Route": "js/jstyle.hm992uwkpw.js",
-      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/jstyle.js",
+      "Route": "js/jrequest.s6rcow5qvz.js",
+      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/jrequest.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1825,7 +1944,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1224"
+          "Value": "3722"
         },
         {
           "Name": "Content-Type",
@@ -1833,11 +1952,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+RJxYpBxLyEz57MUfldDB+I/hdO4WTWjCvesIj9P4yg=\""
+          "Value": "\"pHydPeIo1KMD+BXwbvB0fiNFXN4q+8BDxkdtcK1bq9s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 31 Jan 2025 22:43:29 GMT"
+          "Value": "Sat, 01 Feb 2025 16:30:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1847,7 +1966,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hm992uwkpw"
+          "Value": "s6rcow5qvz"
+        },
+        {
+          "Name": "label",
+          "Value": "js/jrequest.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pHydPeIo1KMD+BXwbvB0fiNFXN4q+8BDxkdtcK1bq9s="
+        }
+      ]
+    },
+    {
+      "Route": "js/jstyle.4kp75alpf1.js",
+      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/wwwroot/js/jstyle.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3GWcDi+BehDaf7V3bSdAXnPBFde+eLKrI0WQj0Ib8Rs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 01 Feb 2025 16:16:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4kp75alpf1"
         },
         {
           "Name": "label",
@@ -1855,7 +2019,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+RJxYpBxLyEz57MUfldDB+I/hdO4WTWjCvesIj9P4yg="
+          "Value": "sha256-3GWcDi+BehDaf7V3bSdAXnPBFde+eLKrI0WQj0Ib8Rs="
         }
       ]
     },
@@ -1870,7 +2034,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1224"
+          "Value": "1997"
         },
         {
           "Name": "Content-Type",
@@ -1878,11 +2042,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+RJxYpBxLyEz57MUfldDB+I/hdO4WTWjCvesIj9P4yg=\""
+          "Value": "\"3GWcDi+BehDaf7V3bSdAXnPBFde+eLKrI0WQj0Ib8Rs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 31 Jan 2025 22:43:29 GMT"
+          "Value": "Sat, 01 Feb 2025 16:16:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1892,7 +2056,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+RJxYpBxLyEz57MUfldDB+I/hdO4WTWjCvesIj9P4yg="
+          "Value": "sha256-3GWcDi+BehDaf7V3bSdAXnPBFde+eLKrI0WQj0Ib8Rs="
         }
       ]
     },
@@ -6649,170 +6813,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-kR0ThRjy07+hq4p08nfdkjN+pI94Gj2rK5lyE0buITU="
-        }
-      ]
-    },
-    {
-      "Route": "VideoSummarizer.0ci4hbht07.bundle.scp.css",
-      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/projectbundle/VideoSummarizer.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1084"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 31 Jan 2025 21:42:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0ci4hbht07"
-        },
-        {
-          "Name": "label",
-          "Value": "VideoSummarizer.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90="
-        }
-      ]
-    },
-    {
-      "Route": "VideoSummarizer.0ci4hbht07.styles.css",
-      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/bundle/VideoSummarizer.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1084"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 31 Jan 2025 21:42:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0ci4hbht07"
-        },
-        {
-          "Name": "label",
-          "Value": "VideoSummarizer.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90="
-        }
-      ]
-    },
-    {
-      "Route": "VideoSummarizer.bundle.scp.css",
-      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/projectbundle/VideoSummarizer.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1084"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 31 Jan 2025 21:42:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90="
-        }
-      ]
-    },
-    {
-      "Route": "VideoSummarizer.styles.css",
-      "AssetFile": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/bundle/VideoSummarizer.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1084"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 31 Jan 2025 21:42:34 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ML1qssTGcajF/fAUxNsJE+7wdLuzgQ3c5YLA1s95E90="
         }
       ]
     }

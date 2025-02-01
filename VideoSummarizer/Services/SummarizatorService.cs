@@ -1,5 +1,3 @@
-
-
 using System.Net.Http.Headers;
 using System.Net.WebSockets;
 using System.Text;
@@ -42,26 +40,6 @@ public class SummarizatorService : ISummarizatorService
             task += $"Так же нужно выполнить следующие операции с текстом: {options}";
         }
 
-        // var prompt = new
-        // {
-        //     modelUri = requestUrl,
-        //     completionOptions = new
-        //     {
-        //         stream = false,
-        //         temperature = 0.15,
-        //         maxTokens = "2000"
-        //     },
-        //     messages = new[] {
-        //         new {
-        //             role = "system",
-        //             text = task.ToString()
-        //         },
-        //         new {
-        //             role = "user",
-        //             text = sourceText
-        //         }
-        //     }
-        // };
         var textTask = task.ToString();
         var prompt = new RequestRoot
         {

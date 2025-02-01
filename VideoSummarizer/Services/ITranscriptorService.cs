@@ -2,5 +2,5 @@
 namespace VideoSummarizer.Services;
 
 public interface ITranscriptorService {
-    Task<string> GetTranscription(FileStream fileStream);
+    Task<string> GetTranscription(string filePath);
 }

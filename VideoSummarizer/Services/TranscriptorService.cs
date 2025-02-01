@@ -13,14 +13,23 @@ public class TranscriptorService : ITranscriptorService
         _logger = logger;
         _client = client;   
     }
-    public async Task<string> GetTranscription(FileStream fileStream)
+    public async Task<string> GetTranscription(string filePath)
     {
-        if (!fileStream.CanRead) {
-            throw new Exception("File stream must be readable");
+        if (!File.Exists(filePath)) {
+            throw new Exception("File is not exist");
         }
 
+        var uploadedFile = await _client.Files.UploadAsync(new FileInfo(filePath));
+        var fileUrl = uploadedFile.UploadUrl;
+
         try {
-            var transcripts = await _client.Transcripts.TranscribeAsync(fileStream);
+
+            var transcriptionOptions = new TranscriptParams {
+                AudioUrl = fileUrl,
+                LanguageCode = TranscriptLanguageCode.Ru
+            };
+            
+            var transcripts = await _client.Transcripts.TranscribeAsync(transcriptionOptions);
 
             transcripts.EnsureStatusCompleted();
             

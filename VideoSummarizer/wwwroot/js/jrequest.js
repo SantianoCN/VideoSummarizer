@@ -22,13 +22,22 @@ $(document).ready(function () {
         formData.append('showSourceText', showSourceText);
         formData.append('additionalTask', additionalTask);
 
+        const element = document.getElementById('result-text-output');
+        element.classList.add('animate');
+        element.innerHTML = "<i>Загрузка транскрипции..</i>";
+
         const request = await fetch('/VideoProcessing/upload', {
             body: formData,
             method: "post"
         });
-        let data = await request.json();
 
-        onAjaxSuccess(data);
+        if  (request.status == 200 ) {
+            let data = await request.json();
+            onAjaxSuccess(data);
+        } else {
+            let data = await request.json();
+            onAjaxError(request.status, data)
+        }
     }
 
     function onAjaxSuccess(response) {
@@ -38,9 +47,17 @@ $(document).ready(function () {
 
         if (response.sourceText != "") {
             element1.innerHTML = `<p>${response.sourceText}</p>`;
+        } else {
+            element1.innerHTML = `<i>Выберите новый файл или просто нажмите "Суммаризировать" чтобы отобразить текст из видео/аудио</i>`;
         }
 
         const element = document.getElementById('result-text-output');
+        element.classList.remove('animate');
+
+        if (response.summary == "") {
+            element.innerHTML = `<i>Не удалось получить или отобразить краткое содержание. Повторите попытку, нажав на кнопку "Суммаризировать" или попробуйте позже</i>`;
+            return;
+        }
 
         let html = '';
         html += `<p><strong>`;
@@ -52,9 +69,23 @@ $(document).ready(function () {
         element.innerHTML = html;
     }
 
-    function onAjaxError(xhr, status, error) {
+    function onAjaxError(status, error) {
+        const element = document.getElementById('result-text-output');
+        element.classList.remove('animate');
+        element.innerHTML = "";
+
         console.error('Ошибка при отправке запроса:', error);
-        alert('Произошла ошибка при отправке запроса. Проверьте консоль для подробностей.');
+        if (status >= 500) {
+            alert(status + ": Ошибка сервера. Повторите попытку позже"); return;
+        }
+        switch (status) {
+            case 415:
+                alert("Ошибка! Неподдерживаемый тип файла");
+                break;
+            case 413:
+                alert("Ошибка! Файл имеет слишком большой размер.");
+                break;
+        } 
     }
 
     async function render(element, data, html) {

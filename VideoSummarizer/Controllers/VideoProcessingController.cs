@@ -59,24 +59,15 @@ public class VideoProcessingController : Controller
         [FromForm] bool showSourceText, [FromForm] string additionalTask){
         string text = "";
         
-        using (var fileStream = new FileStream("../uploads", FileMode.Create, FileAccess.Write))
-        {
-            await file.CopyToAsync(fileStream);
-        }
-        using (var fileStream = new FileStream("../uploads", FileMode.Open, FileAccess.Read))
-        {
-            var task = Task.Run(async () =>
-            {
-                return await _transcriptor.GetTranscription(fileStream);
-            });
+        var pathToUpload = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
+        var fileName = $"{Guid.NewGuid()}_{file.FileName}";
+        var filePath = Path.Combine(pathToUpload, fileName);
 
-            await task.ContinueWith((task) =>
-            {
-                fileStream.Close();
-            });
-
-            text = task.Result;
+        using (var fs = new FileStream(filePath, FileMode.Create)) {
+            await file.CopyToAsync(fs);
         }
+        
+        text = await _transcriptor.GetTranscription(filePath);
 
         if (text.Split(" ").Length < 20)
         {

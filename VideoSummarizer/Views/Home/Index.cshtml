@@ -21,7 +21,7 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Исходный текст</label><br>
-        <input type="checkbox" class="custom-checkbox" id="showSourceText" value="yes">
+        <input type="checkbox" class="custom-checkbox" id="showSourceText" value="no" onclick="showSourceText()">
         <small>Показать субтитры из видео/аудио</small>
     </div>
     <div class="additional-area-checkbox">
@@ -40,9 +40,10 @@
     </button>
 </div>
 <section class="content-panel-area">
-    <div class="source-text-area">
+    <div class="source-text-area" id="source-text-area">
         <div class="text-area-header">
             <h5>Исходный текст</h5>
+            <div class="copy" onclick="copySourceText()"></div>
         </div>
         <div class="text-area-content" id="source-text-output">
             <!-- Source text -->
@@ -51,6 +52,7 @@
     <div class="result-text-area">
         <div class="text-area-header">
             <h5>Краткое содержание</h5>
+            <div class="copy" onclick="copyResultText()"></div>
         </div>
         <div class="text-area-content" id="result-text-output">
             <!-- Result output -->
@@ -59,52 +61,3 @@
 </section>
 <section class="user-documentation-area">
 </section>
-
-
-@* <section class="std-section">
-    <div class="main-container">
-
-        <div class="mb-3">
-            <label for="" class="form-label">Суммаризировать видео</label>
-            <input type="file" class="form-control" id="fileInput" name="" aria-describedby="helpId"
-                placeholder="Выберите видео на компьютере" />
-            <small id="helpId" class="form-text text-muted">Видео или аудио в формате mp4, avi, wav.. </small>
-        </div>
-        <div class="mb-3">
-            <input type="number" class="form-control" id="wordsCount" name="" aria-describedby="helpId"
-                placeholder="Укажите количество слов" />
-            <small id="helpId" class="form-text text-muted">От 10 слов</small>
-        </div>
-        <label class="btn btn-primary active">
-            <input type="checkbox" class="me-2" id="getFullText" name="" checked autocomplete="off" />
-            Показать исходный текст
-        </label>
-    </div>
-    <div class="btn-area">
-        <div class="text-center">
-            <button class="btn btn-primary active" type="submit" id="summarizeBtn"
-                name="summarizeBtn">Суммаризировать</button>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="progress-area">
-        <div class="progress">
-        <div
-                class="progress-bar bg-primary"
-                id="progressbar"
-                role="progressbar"
-                style="width: 0%;"
-                aria-valuenow="0"
-                aria-valuemin="0"
-                aria-valuemax="100"
-            > Загрузка транскрипции
-        </div>
-    </div>
-    </div>
-    <div class="content-area">
-        <div class="text-center" id="output">
-
-        </div>
-    </div>
-</section> *@

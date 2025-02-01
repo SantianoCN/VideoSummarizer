@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-sm">
             <div class="container">
                 <div class="logo" tabindex="0"></div>
-                <a class="navbar-brand" href="#">Video summarizer</a>
+                <a class="navbar-brand" href="/Home/Privacy">Video summarizer</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -24,11 +24,11 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" aria-current="page">Главная
+                            <a class="nav-link" href="/" aria-current="page">Главная
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Профиль</a>
+                            <a class="nav-link" href="/Authorization">Профиль</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
@@ -57,10 +57,8 @@
     <main>
         @RenderBody()
     </main>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - VideoSummarizer - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer>
+        &copy; <p>2025 - VideoSummarizer -</p> <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

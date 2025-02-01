@@ -46,9 +46,7 @@ c:/Users/santi/Documents/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/ref/Vi
 /run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/VideoSummarizer.RazorAssemblyInfo.cache
 /run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/VideoSummarizer.RazorAssemblyInfo.cs
 /run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/VideoSummarizer.sourcelink.json
-/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/bundle/VideoSummarizer.styles.css
-/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/scopedcss/projectbundle/VideoSummarizer.bundle.scp.css
 /run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/staticwebassets.build.json
 /run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/staticwebassets.development.json
 /run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/staticwebassets.build.endpoints.json
