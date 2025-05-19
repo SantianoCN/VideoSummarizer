@@ -1,14 +1,22 @@
 using AssemblyAI;
-using VideoSummarizer.Services;
+using VideoSummarizer.Core.Contracts;
+using VideoSummarizer.UseCases.Services;
 using VideoSummarizer.Middlewares;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using VideoSummarizer;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddMvcCore();
+builder.Services.AddAuthorization();
+builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("AuthorizationSettings"));
+builder.Services.AddAuth(builder.Configuration);
 builder.Services.AddSingleton<IRazorViewEngine, RazorViewEngine>();
 builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
 builder.Services.AddControllers();

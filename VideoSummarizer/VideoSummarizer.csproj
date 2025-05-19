@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="AssemblyAI" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0" />
     <PackageReference Include="VideoLibrary" Version="3.2.6" />
   </ItemGroup>
 

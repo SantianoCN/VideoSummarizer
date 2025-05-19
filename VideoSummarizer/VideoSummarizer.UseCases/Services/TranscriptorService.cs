@@ -3,7 +3,9 @@ using AssemblyAI;
 using AssemblyAI.Transcripts;
 using VideoLibrary.Exceptions;
 
-namespace VideoSummarizer.Services;
+using VideoSummarizer.Core.Contracts;
+
+namespace VideoSummarizer.UseCases.Services;
 
 public class TranscriptorService : ITranscriptorService
 {

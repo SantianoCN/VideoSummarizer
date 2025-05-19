@@ -2,9 +2,10 @@
 using VideoLibrary;
 using Microsoft.AspNetCore.Mvc;
 using VideoSummarizer.Models;
-using VideoSummarizer.Services;
+using VideoSummarizer.UseCases.Services;
 using AssemblyAI;
 using Microsoft.AspNetCore.Identity;
+using VideoSummarizer.Core.Contracts;
 
 namespace VideoSummarizer.Controllers;
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj": {}
+    "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj": {}
   },
   "projects": {
-    "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj": {
+    "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj",
+        "projectUniqueName": "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj",
         "projectName": "VideoSummarizer",
-        "projectPath": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj",
+        "projectPath": "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj",
         "packagesPath": "/home/nikita/.nuget/packages/",
-        "outputPath": "/run/media/nikita/EC14BD1314BCE22E/source/Web/ASP/VideoSummarizer/VideoSummarizer/obj/",
+        "outputPath": "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/nikita/.nuget/NuGet/NuGet.Config"
@@ -49,6 +49,14 @@
               "target": "Package",
               "version": "[1.2.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "VideoLibrary": {
               "target": "Package",
               "version": "[3.2.6, )"
@@ -68,7 +76,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.12, 8.0.12]"
+              "version": "[8.0.15, 8.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -79,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.105/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

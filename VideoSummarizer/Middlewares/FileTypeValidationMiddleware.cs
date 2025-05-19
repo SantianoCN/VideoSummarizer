@@ -17,14 +17,11 @@ public class FileTypeValidationMiddleware
 {
     private readonly ILogger<FileTypeValidationMiddleware> _logger;
     private readonly RequestDelegate _next;
-    private readonly IRazorViewEngine _razorViewEngine;
     private readonly ITempDataProvider _tempDataProvider;
-    public FileTypeValidationMiddleware(RequestDelegate next, ILogger<FileTypeValidationMiddleware> logger, IRazorViewEngine razorViewEngine,
-        ITempDataProvider tempDataProvider)
+    public FileTypeValidationMiddleware(RequestDelegate next, ILogger<FileTypeValidationMiddleware> logger, ITempDataProvider tempDataProvider)
     {
         _logger = logger;
         _next = next;
-        _razorViewEngine = razorViewEngine;
         _tempDataProvider = tempDataProvider;
     }
     public async Task InvokeAsync(HttpContext context)
@@ -68,39 +65,5 @@ public class FileTypeValidationMiddleware
             }  await _next.Invoke(context);
         }
         else await _next.Invoke(context);
-    }
-
-    private async Task<string> RenderViewToStringAsync(HttpContext context, string viewName, object model)
-    {
-        var actionContext = new ActionContext(context, new RouteData(), new ActionDescriptor());
-
-        var viewResult = _razorViewEngine.FindView(actionContext, viewName, false);
-
-        if (viewResult.View == null)
-        {
-            throw new ArgumentNullException($"{viewName} not found.");
-        }
-
-        var viewData = new ViewDataDictionary(new EmptyModelMetadataProvider(), new ModelStateDictionary())
-        {
-            Model = model
-        };
-
-        var tempData = new TempDataDictionary(context, _tempDataProvider);
-
-        using (var writer = new StringWriter())
-        {
-            var viewContext = new ViewContext(
-                actionContext,
-                viewResult.View,
-                viewData,
-                tempData,
-                writer,
-                new HtmlHelperOptions()
-            );
-
-            await viewResult.View.RenderAsync(viewContext);
-            return writer.ToString();
-        }
     }
 }

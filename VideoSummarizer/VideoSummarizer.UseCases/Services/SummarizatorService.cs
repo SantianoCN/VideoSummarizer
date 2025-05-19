@@ -5,7 +5,9 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Identity;
 using VideoSummarizer.Models;
 
-namespace VideoSummarizer.Services;
+using VideoSummarizer.Core.Contracts;
+
+namespace VideoSummarizer.UseCases.Services;
 
 public class SummarizatorService : ISummarizatorService
 {
