@@ -19,6 +19,7 @@ public static class AuthServiceExtensions
                 ValidIssuer = "copyright(c)VideoSummarizer2025",
                 ValidAudience = "ApplicationUser",
 
+
                 ValidateLifetime = true,
 
                 ValidateIssuerSigningKey = true,

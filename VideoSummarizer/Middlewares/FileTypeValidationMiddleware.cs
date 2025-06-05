@@ -17,12 +17,10 @@ public class FileTypeValidationMiddleware
 {
     private readonly ILogger<FileTypeValidationMiddleware> _logger;
     private readonly RequestDelegate _next;
-    private readonly ITempDataProvider _tempDataProvider;
-    public FileTypeValidationMiddleware(RequestDelegate next, ILogger<FileTypeValidationMiddleware> logger, ITempDataProvider tempDataProvider)
+    public FileTypeValidationMiddleware(RequestDelegate next, ILogger<FileTypeValidationMiddleware> logger)
     {
         _logger = logger;
         _next = next;
-        _tempDataProvider = tempDataProvider;
     }
     public async Task InvokeAsync(HttpContext context)
     {
@@ -48,7 +46,7 @@ public class FileTypeValidationMiddleware
                     await context.Response.WriteAsJsonAsync(model);
                     return;
                 }
-                if (file.Length == 0 || file.Length > 10 * 1024 * 1024) {
+                if (file.Length == 0 || file.Length > 100 * 1024 * 1024) {
                      var message = "File size must be not over 100mb";
                     _logger.LogError(message);
 

@@ -1,21 +1,17 @@
 @RenderMode.Server
 
-<head>
-    <title>Авторизация</title>
-    <meta charset="utf-8">
-</head>
-<body>
-    <header>
-        <h1>Авторизация</h1>
-    </header>
-    <main>
-        <form method="post" action="/Authorization/SignIn">
-            Логин <input type="text" name="login">
-            Пароль <input type="password" name="pass">
-            <input type="submit" value="Войти">
-        </form>
-    </main>
-    <footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/jrequest.js"></script>
 
-    </footer>
-</body>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col col-lg-6">
+                <h2>Авторизация</h2>
+            </div>
+            <div class="col-md-6 col-md-6"></div>
+                <h2>Войдите </h2>
+            </div>
+        </div>
+    </div>
+</section>

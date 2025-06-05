@@ -127,3 +127,16 @@ c:/Users/santi/Documents/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/ref/Vi
 /run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/VideoSum.B6117517.Up2Date
 /run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/VideoSummarizer.genruntimeconfig.cache
 /run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/obj/Debug/net8.0/ref/VideoSummarizer.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Npgsql.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

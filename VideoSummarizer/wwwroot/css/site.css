@@ -343,12 +343,26 @@ input[type="checkbox"]:checked::after {
   height: 20px;
   aspect-ratio: 1 / 1;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.copy:hover {
+  transform: scale(0.9);
 }
 
 .text-area-content {
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--hover-text-color);
+  
   padding: 10px;
 }
+
+.text-area-content::-webkit-scrollbar-track {
+  background-color: var(--second-color);
+  color: var(--second-color);
+} 
 
 .text-area-content.animate {
   background: linear-gradient(90deg, var(--second-color), var(--animation-color), var(--second-color));
@@ -369,6 +383,64 @@ footer {
   line-height: 60px;
 }
 
+/* notifications */
+.notification-window {
+  justify-self: center;
+  position: fixed;
+  bottom: 0;
+  width: 50vw;
+  min-width: 280px;
+  max-width: 1000px;
+  height: 42px;
+  background-color: var(--primary-color);
+  opacity: 0;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.notification-window.show {
+  bottom: 80px;
+  opacity: 1;
+}
+
+.notification-window.hide {
+  bottom: 0;
+  opacity: 0;
+}
+
+.notification-window.animate-show {
+  animation: showNotification 1s ease-in-out 1;
+}
+
+.notification-window.animate-hide {
+  animation: hideNotifications 1.5s ease-in 1;
+}
+
+.notification-text {
+  color: var(--text-color);
+}
+
+@keyframes showNotification {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  100% {
+    bottom: 80px;
+    opacity: 1;
+  }
+}
+
+@keyframes hideNotifications {
+  0% {
+    bottom: 80px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+    opacity: 0;
+  }
+}
 
 @keyframes contentAnimation {
   0% {

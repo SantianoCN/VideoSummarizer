@@ -5,7 +5,7 @@ using VideoSummarizer.Persistence.DTO;
 
 namespace VideoSummarizer.Persistence.Implements;
 
-public class AccountRepository : IRepository<AccountUserDTO>
+public class AccountRepository : IRepository<AccountUserDTO, AccountUserReadDTO, AccountUserUpdateDTO>
 {
     private readonly ILogger<AccountRepository> _logger;
     private readonly DataContext _context;
@@ -21,18 +21,34 @@ public class AccountRepository : IRepository<AccountUserDTO>
         });
     }
 
-    public Task Delete(string uniqId)
+    public async Task Delete(string uniqId)
     {
-        throw new NotImplementedException();
+        var user = _context.Users.FirstOrDefault(u => u.UserId == uniqId);
+        if (user != null) {
+            _context.Users.Remove(user);
+        }
     }
 
-    public Task<AccountUserDTO> Read()
+    public async Task<AccountUserReadDTO?> Read(string uniqId)
     {
-        throw new NotImplementedException();
+        var user = _context.Users.FirstOrDefault(u => u.UserId == uniqId);
+        if (user != null)
+        {
+            return new AccountUserReadDTO
+            {
+                Username = user.Username,
+                Age = user.Age
+            };
+        }
+        return null;
     }
 
-    public Task Update<UpdateDTO>(string uniqId, UpdateDTO value)
+    public async Task Update(string uniqId, AccountUserUpdateDTO value)
     {
-        throw new NotImplementedException();
+        var user = _context.Users.FirstOrDefault(u => u.UserId == uniqId);
+        if (user != null)
+        {
+            user.GetType().GetProperty(value.AttributeName).SetValue(user, value);
+        }
     }
 }

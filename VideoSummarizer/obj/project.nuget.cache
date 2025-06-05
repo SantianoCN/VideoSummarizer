@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oAXBA7Y3S/g=",
+  "dgSpecHash": "YWttTt2LTrg=",
   "success": true,
   "projectFilePath": "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj",
   "expectedPackageFiles": [
@@ -114,7 +114,7 @@
     "/home/nikita/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/home/nikita/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/home/nikita/.nuget/packages/videolibrary/3.2.6/videolibrary.3.2.6.nupkg.sha512",
-    "/home/nikita/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.15/microsoft.netcore.app.host.linux-x64.8.0.15.nupkg.sha512"
+    "/home/nikita/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.16/microsoft.netcore.app.host.linux-x64.8.0.16.nupkg.sha512"
   ],
   "logs": []
 }

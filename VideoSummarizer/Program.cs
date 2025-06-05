@@ -1,4 +1,5 @@
 using AssemblyAI;
+using VideoSummarizer;
 using VideoSummarizer.Core.Contracts;
 using VideoSummarizer.UseCases.Services;
 using VideoSummarizer.Middlewares;
@@ -7,7 +8,8 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using VideoSummarizer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,25 @@ builder.Services.AddMvcCore();
 builder.Services.AddAuthorization();
 builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("AuthorizationSettings"));
 builder.Services.AddAuth(builder.Configuration);
+builder.Services.AddScoped<TokenValidationParameters>(o =>
+{
+    return new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+                ValidateAudience = true,
+
+                ValidIssuer = "copyright(c)VideoSummarizer2025",
+                ValidAudience = "ApplicationUser",
+
+
+                ValidateLifetime = true,
+
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AuthorizationSettings:Key"]!))
+    };
+});
+builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<AccountService>();
 builder.Services.AddSingleton<IRazorViewEngine, RazorViewEngine>();
 builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
 builder.Services.AddControllers();
@@ -81,7 +102,3 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
-
-record class Person(string name, string surname, string patronymic, int age);
-
-

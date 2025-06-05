@@ -46,26 +46,26 @@ $(document).ready(function () {
         const element1 = document.getElementById('source-text-output');
 
         if (response.sourceText != "") {
-            element1.innerHTML = `<p>${response.sourceText}</p>`;
+            element1.innerHTML = <p>${response.sourceText}</p>;
         } else {
-            element1.innerHTML = `<i>Выберите новый файл или просто нажмите "Суммаризировать" чтобы отобразить текст из видео/аудио</i>`;
+            element1.innerHTML = <i>Выберите новый файл или просто нажмите "Суммаризировать" чтобы отобразить текст из видео/аудио</i>;
         }
 
         const element = document.getElementById('result-text-output');
         element.classList.remove('animate');
 
         if (response.summary == "") {
-            element.innerHTML = `<i>Не удалось получить или отобразить краткое содержание. Повторите попытку, нажав на кнопку "Суммаризировать" или попробуйте позже</i>`;
+            element.innerHTML = <i>Не удалось получить или отобразить краткое содержание. Повторите попытку, нажав на кнопку "Суммаризировать" или попробуйте позже</i>;
             return;
         }
 
         let html = '';
-        html += `<p><strong>`;
+        html += <p>;
         element.innerHTML = html;
 
         render(element, response, html);
 
-        html = `</strong></p>`;
+        html = </p>;
         element.innerHTML = html;
     }
 
@@ -90,7 +90,7 @@ $(document).ready(function () {
 
     async function render(element, data, html) {
         for (let i = 0; i < data.summary.length; i++) {
-            html += `${data.summary[i]}`;
+            html += ${data.summary[i]};
             element.innerHTML = html;
             await delay(20);
         }

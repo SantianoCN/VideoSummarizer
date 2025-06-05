@@ -1,4 +1,3 @@
-
 using VideoLibrary;
 using Microsoft.AspNetCore.Mvc;
 using VideoSummarizer.Models;

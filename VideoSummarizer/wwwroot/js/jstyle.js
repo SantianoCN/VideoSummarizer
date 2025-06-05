@@ -60,6 +60,7 @@ function copySourceText() {
     const text = element.textContent;
     
     navigator.clipboard.writeText(text);
+    notification("Текст скопирован в буфер обмена");
 }
 
 function copyResultText() {
@@ -67,6 +68,27 @@ function copyResultText() {
     const text = element.textContent;
     
     navigator.clipboard.writeText(text);
+    notification("Текст скопирован в буфер обмена");
+}
+
+function notification(text) {
+    const element = document.getElementById('notification-window');
+    const textElement = document.getElementById('notification-text');
+    
+    textElement.innerText = text;
+    element.classList.remove('hide');
+    element.classList.remove('animate-hide');
+    
+    element.classList.add('show');
+    element.classList.add('animate-show');
+
+    setTimeout(() => {
+        element.classList.remove('show')
+        element.classList.remove('animate-show');
+
+        element.classList.add('hide');
+        element.classList.add('animate-hide');
+    }, 6000);
 }
 
 window.onload = loadTheme;
