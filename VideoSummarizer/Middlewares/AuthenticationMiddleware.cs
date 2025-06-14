@@ -14,7 +14,7 @@ public class AuthenticationMiddleware
     public async Task InvokeAsync(HttpContext context, JwtService jwtService)
     {
         StringValues token;
-        if (context.Request.Headers.TryGetValue("Authorization",out token))
+        if (context.Request.Headers.TryGetValue("Authorization", out token))
         {
             if (!string.IsNullOrEmpty(token.ToString()) && !string.IsNullOrEmpty(token.ToString().Replace("Bearer: ", "")))
             {
@@ -22,10 +22,23 @@ public class AuthenticationMiddleware
                 if (jwtService.ValidateToken(token, out principal) && principal != null)
                 {
                     context.User = principal;
+                    await _next(context);
                     return;
                 }
             }
         }
-        await _next.Invoke(context);
+        else if (context.Request.Cookies.TryGetValue("jwtToken", out var tokenCookie))
+        {
+            ClaimsPrincipal principal;
+            if (jwtService.ValidateToken(tokenCookie, out principal) && principal != null)
+            {
+                context.User = principal;
+                await _next(context);
+                return;
+            }
+        }
+        
+        context.Response.StatusCode = 401;
+        await context.Response.WriteAsync("Unauthorized");
     }
 }

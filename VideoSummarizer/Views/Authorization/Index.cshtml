@@ -1,17 +1,88 @@
-@RenderMode.Server
+@model VideoSummarizer.Models.UserRegistrationModel
 
+@{
+    ViewData["Title"] = "Authorization";
+}
+
+<link rel="stylesheet" href="~/css/auth.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="~/js/jrequest.js"></script>
+<script src="~/js/auth.js"></script>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col col-lg-6">
-                <h2>Авторизация</h2>
-            </div>
-            <div class="col-md-6 col-md-6"></div>
-                <h2>Войдите </h2>
-            </div>
+<div class="auth-container">
+    <div class="auth-header">
+        <h2>Welcome to VideoSummarizer</h2>
+        <div class="theme-switcher">
+            <button class="theme-btn light" data-theme="light"></button>
+            <button class="theme-btn dark" data-theme="dark"></button>
+            <button class="theme-btn blue" data-theme="blue"></button>
         </div>
     </div>
-</section>
+
+    <div class="auth-content">
+        <div class="left-content" id="left-login-content">
+            <div class="illustration">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <h3>Sign In</h3>
+                <p>Access your account to start summarizing videos</p>
+            </div>
+        </div>
+
+        <div class="left-content hidden-form" id="left-register-content">
+            <div class="illustration">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <h3>Sign Up</h3>
+                <p>Join us to unlock all features</p>
+            </div>
+        </div>
+
+        <div class="right-form" id="right-login-form">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="login">Login</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="auth-btn" id="logInBtn">Sign In</button>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" id="intoSignUpPageBtn">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="right-form hidden-form" id="right-register-form">
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-login">Login</label>
+                    <input type="text" id="reg-login" name="login" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="auth-btn" id="registerBtn">Sign Up</button>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="#" id="intoSignInPageBtn">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <p class="notification-text" id="notification-text"></p>
+    </div>
+</div>

@@ -1,54 +1,60 @@
 
 using VideoSummarizer.Core.Contracts;
+using VideoSummarizer.Core.DTO;
 using VideoSummarizer.Core.Entities.Database;
-using VideoSummarizer.Persistence.DTO;
 
 namespace VideoSummarizer.Persistence.Implements;
 
-public class AccountRepository : IRepository<AccountUserDTO, AccountUserReadDTO, AccountUserUpdateDTO>
+public class AccountRepository : IRepository<UserRegisterDto, DatabaseUser>
 {
     private readonly ILogger<AccountRepository> _logger;
     private readonly DataContext _context;
     public AccountRepository(ILogger<AccountRepository> logger, DataContext context) => (logger, context) = (_logger, _context);
-    public async Task Create(AccountUserDTO value)
+    public async Task Create(UserRegisterDto value)
     {
         _context.Users.Add(new DatabaseUser
         {
             UserId = Guid.NewGuid().ToString(),
             Username = value.Username,
             Login = value.Login,
-
+            Password = value.Password,
+            Salt = value.Salt
         });
     }
 
     public async Task Delete(string uniqId)
     {
         var user = _context.Users.FirstOrDefault(u => u.UserId == uniqId);
-        if (user != null) {
+        if (user != null)
+        {
             _context.Users.Remove(user);
         }
     }
 
-    public async Task<AccountUserReadDTO?> Read(string uniqId)
+    public async Task<DatabaseUser?> Read(string uniqId)
     {
         var user = _context.Users.FirstOrDefault(u => u.UserId == uniqId);
         if (user != null)
         {
-            return new AccountUserReadDTO
-            {
-                Username = user.Username,
-                Age = user.Age
-            };
+            return user;
         }
         return null;
     }
 
-    public async Task Update(string uniqId, AccountUserUpdateDTO value)
+    public async Task Update(string uniqId, UserRegisterDto value)
     {
         var user = _context.Users.FirstOrDefault(u => u.UserId == uniqId);
         if (user != null)
         {
-            user.GetType().GetProperty(value.AttributeName).SetValue(user, value);
         }
+    }
+
+    public async Task<bool> IsExists(string login)
+    {
+        if (_context.Users.Any(u => u.Login == login))
+        {
+            return true;
+        }
+        return false;
     }
 }

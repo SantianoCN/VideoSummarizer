@@ -23,7 +23,7 @@ public class FileTypeValidationMiddleware
         _next = next;
     }
     public async Task InvokeAsync(HttpContext context)
-    {
+    {   
         if (context.Request.Path == "/VideoProcessing/upload")
         {
             IFormFileCollection files = context.Request.Form.Files;

@@ -3,6 +3,88 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "css/auth.css",
+      "AssetFile": "css/auth.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5140"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N528D/nrG59e0utaV6SDohQYA65NVgjDVMFirMY2z/k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 13:37:35 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-N528D/nrG59e0utaV6SDohQYA65NVgjDVMFirMY2z/k="
+        }
+      ]
+    },
+    {
+      "Route": "css/auth.rbxed8b0uf.css",
+      "AssetFile": "css/auth.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5140"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N528D/nrG59e0utaV6SDohQYA65NVgjDVMFirMY2z/k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 13:37:35 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rbxed8b0uf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-N528D/nrG59e0utaV6SDohQYA65NVgjDVMFirMY2z/k="
+        },
+        {
+          "Name": "label",
+          "Value": "css/auth.css"
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "css/site.css",
       "Selectors": [],
@@ -29,7 +111,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 18:17:51 GMT"
+          "Value": "Wed, 11 Jun 2025 16:50:18 GMT"
         }
       ],
       "EndpointProperties": [
@@ -66,7 +148,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 18:17:51 GMT"
+          "Value": "Wed, 11 Jun 2025 16:50:18 GMT"
         }
       ],
       "EndpointProperties": [
@@ -495,6 +577,133 @@
       ]
     },
     {
+      "Route": "js/auth.js",
+      "AssetFile": "js/auth.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5169"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/Kx0kJ7Nnr+1/kGbtlw+2u146P4sE4ciqGSitikKLbA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 13:37:15 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/Kx0kJ7Nnr+1/kGbtlw+2u146P4sE4ciqGSitikKLbA="
+        }
+      ]
+    },
+    {
+      "Route": "js/auth.w922jac70o.js",
+      "AssetFile": "js/auth.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5169"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/Kx0kJ7Nnr+1/kGbtlw+2u146P4sE4ciqGSitikKLbA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 13:37:15 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w922jac70o"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/Kx0kJ7Nnr+1/kGbtlw+2u146P4sE4ciqGSitikKLbA="
+        },
+        {
+          "Name": "label",
+          "Value": "js/auth.js"
+        }
+      ]
+    },
+    {
+      "Route": "js/jrequest.1wwacm7i9u.js",
+      "AssetFile": "js/jrequest.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6252"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/6Y/p+4Qlkig3G3ICiDJpNJuq4qu2u5PrkUf7QjTnug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Jun 2025 16:54:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1wwacm7i9u"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/6Y/p+4Qlkig3G3ICiDJpNJuq4qu2u5PrkUf7QjTnug="
+        },
+        {
+          "Name": "label",
+          "Value": "js/jrequest.js"
+        }
+      ]
+    },
+    {
       "Route": "js/jrequest.js",
       "AssetFile": "js/jrequest.js",
       "Selectors": [],
@@ -509,7 +718,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3693"
+          "Value": "6252"
         },
         {
           "Name": "Content-Type",
@@ -517,62 +726,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kFwKj4j4TuNFJTGTrTu86WMrcjYqfiKTMfcxU54qcZo=\""
+          "Value": "\"/6Y/p+4Qlkig3G3ICiDJpNJuq4qu2u5PrkUf7QjTnug=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 18:20:05 GMT"
+          "Value": "Wed, 11 Jun 2025 16:54:30 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kFwKj4j4TuNFJTGTrTu86WMrcjYqfiKTMfcxU54qcZo="
-        }
-      ]
-    },
-    {
-      "Route": "js/jrequest.spjfrkg25t.js",
-      "AssetFile": "js/jrequest.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3693"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"kFwKj4j4TuNFJTGTrTu86WMrcjYqfiKTMfcxU54qcZo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 18:20:05 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "spjfrkg25t"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-kFwKj4j4TuNFJTGTrTu86WMrcjYqfiKTMfcxU54qcZo="
-        },
-        {
-          "Name": "label",
-          "Value": "js/jrequest.js"
+          "Value": "sha256-/6Y/p+4Qlkig3G3ICiDJpNJuq4qu2u5PrkUf7QjTnug="
         }
       ]
     },
@@ -603,7 +767,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 18:20:50 GMT"
+          "Value": "Thu, 05 Jun 2025 18:23:13 GMT"
         }
       ],
       "EndpointProperties": [
@@ -648,7 +812,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Jun 2025 18:20:50 GMT"
+          "Value": "Thu, 05 Jun 2025 18:23:13 GMT"
         }
       ],
       "EndpointProperties": [

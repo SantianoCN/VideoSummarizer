@@ -54,7 +54,7 @@ public class VideoProcessingController : Controller
     }
 
 
-    [HttpPost("upload")]
+    [HttpPost("Upload")]
     public async Task<IActionResult> CreateNewSummaryFromFile([FromForm] IFormFile file, [FromForm] int wordsCount,
         [FromForm] bool showSourceText, [FromForm] string additionalTask){
         string text = "";

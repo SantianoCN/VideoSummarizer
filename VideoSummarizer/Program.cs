@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using VideoSummarizer.Persistence.Implements;
+using VideoSummarizer.Persistence;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,9 @@ builder.Services.AddMvcCore();
 builder.Services.AddAuthorization();
 builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("AuthorizationSettings"));
 builder.Services.AddAuth(builder.Configuration);
+builder.Services.AddSingleton<DataContext>();
+builder.Services.AddSingleton<AccountRepository>();
+builder.Services.AddSingleton<HashService>();
 builder.Services.AddScoped<TokenValidationParameters>(o =>
 {
     return new TokenValidationParameters
@@ -87,12 +92,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
-    name: "auth",
-    pattern: "{controller=Authorization}/{action=Index}/{id?}");
-
-app.MapControllerRoute(
-    name: "signin",
-    pattern: "{controller=Authorization}/{action=SignIn}");
+    name: "authorization",
+    pattern: "{controller=Authorization}/{action=SignIn}/{id?}");
 
 app.MapControllerRoute(
     name: "videoProcessing",
