@@ -23,6 +23,7 @@ builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("Author
 builder.Services.AddAuth(builder.Configuration);
 builder.Services.AddSingleton<DataContext>();
 builder.Services.AddSingleton<AccountRepository>();
+builder.Services.AddSingleton<RequestRepository>();
 builder.Services.AddSingleton<HashService>();
 builder.Services.AddScoped<TokenValidationParameters>(o =>
 {
@@ -31,8 +32,8 @@ builder.Services.AddScoped<TokenValidationParameters>(o =>
         ValidateIssuer = true,
                 ValidateAudience = true,
 
-                ValidIssuer = "copyright(c)VideoSummarizer2025",
-                ValidAudience = "ApplicationUser",
+                ValidIssuer = builder.Configuration["AuthorizationSettings:Issuer"],
+                ValidAudience = builder.Configuration["AuthorizationSettings:Audience"],
 
 
                 ValidateLifetime = true,
@@ -43,6 +44,7 @@ builder.Services.AddScoped<TokenValidationParameters>(o =>
 });
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<AccountService>();
+builder.Services.AddScoped<RequestService>();
 builder.Services.AddSingleton<IRazorViewEngine, RazorViewEngine>();
 builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
 builder.Services.AddControllers();
@@ -86,6 +88,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseMiddleware<FileTypeValidationMiddleware>();
+app.UseMiddleware<AuthenticationMiddleware>();
 
 app.MapControllerRoute(
     name: "default",
@@ -96,9 +99,15 @@ app.MapControllerRoute(
     pattern: "{controller=Authorization}/{action=SignIn}/{id?}");
 
 app.MapControllerRoute(
+    name: "history",
+    pattern: "{controller=History}/{action=GetUserRequests}"
+);
+app.MapControllerRoute(
     name: "videoProcessing",
     pattern: "{controller=VideoProcessing}/{action=Index}"
 );
+
+
 
 app.MapRazorPages();
 

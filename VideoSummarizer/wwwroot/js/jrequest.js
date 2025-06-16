@@ -21,39 +21,137 @@ $(document).ready(function () {
     //     notification();
     // });
 
+    loadHistory();
+
+    async function loadHistory() {
+        try {
+            const token = getTokenFromCookies();
+            if (!token) return;
+
+            const response = await fetch('/History', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer: ${token}`,
+                    'Accept': 'application/json'
+                },
+                credentials: 'include'
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data) {
+                    renderHistory(data.data);
+                }
+            }
+        } catch (error) {
+            console.error('Ошибка загрузки истории:', error);
+        }
+    }
+
+    function renderHistory(requests) {
+        const historyList = document.querySelector('.history-list');
+        
+        const currentRequest = historyList.querySelector('.history-item.active');
+        historyList.innerHTML = '';
+        if (currentRequest) {
+            historyList.appendChild(currentRequest);
+        }
+
+        requests.forEach(request => {
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            historyItem.innerHTML = `
+                <div class="history-title">${request.title || 'Без названия'}</div>
+                <div class="history-time">${formatDate(request.dateTime)}</div>
+            `;
+            
+            historyItem.addEventListener('click', () => {
+                window.location.href = `#${request.id}`;
+            });
+
+            historyList.appendChild(historyItem);
+        });
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const now = new Date();
+        
+        if (date.toDateString() === now.toDateString()) {
+            return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        
+        const yesterday = new Date(now);
+        yesterday.setDate(yesterday.getDate() - 1);
+        if (date.toDateString() === yesterday.toDateString()) {
+            return 'Вчера';
+        }
+        
+        const weekAgo = new Date(now);
+        weekAgo.setDate(weekAgo.getDate() - 7);
+        if (date > weekAgo) {
+            return date.toLocaleDateString([], { weekday: 'short' });
+        }
+        
+        return date.toLocaleDateString([], { day: 'numeric', month: 'short' });
+    }
+
     async function sendRequest() {
         const file = fileInput.files[0];
         const wordsCount = document.getElementById('wordsCountInput').value;
         const showSourceText = document.getElementById('showSourceText').checked;
         const additionalTask = document.getElementById('additionalTask').value;
-
+    
         if (!file) {
             alert("Выберите файл для загрузки.");
             return;
         }
-
+    
+        const token = getTokenFromCookies();
+        if (!token) {
+            alert("Требуется авторизация");
+            return;
+        }
+    
         const formData = new FormData();
         formData.append('file', file);
         formData.append('wordsCount', wordsCount);
         formData.append('showSourceText', showSourceText);
         formData.append('additionalTask', additionalTask);
-
+    
         const element = document.getElementById('result-text-output');
         element.classList.add('animate');
         element.innerHTML = `<i>Загрузка транскрипции..</i>`;
-
+    
+        const headers = {
+            'Authorization': `Bearer ${token}`
+        };
+    
         const request = await fetch('/VideoProcessing/Upload', {
             body: formData,
-            method: 'POST'
+            method: 'POST',
+            headers: headers,
+            credentials: 'include' 
         });
-
-        if  (request.status == 200 ) {
+    
+        if (request.status == 200) {
             let data = await request.json();
             onAjaxSuccess(data);
         } else {
             let data = await request.json();
-            onAjaxError(request.status, data)
+            onAjaxError(request.status, data);
         }
+    }
+    
+    function getTokenFromCookies() {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            const [name, value] = cookie.trim().split('=');
+            if (name === 'jwtToken') {
+                return value;
+            }
+        }
+        return null;
     }
 
     async function sendAuthData() {

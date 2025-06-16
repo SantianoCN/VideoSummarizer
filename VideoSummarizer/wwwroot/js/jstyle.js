@@ -22,6 +22,13 @@ function rangeHandChange(){
     element.value = value;
 }
 
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+    sidebar.classList.toggle('collapsed');
+    mainContent.classList.toggle('expanded');
+}
+
 function summBtnClick() {
     const element = document.getElementById('mainInfo');
     element.style.display = 'none';

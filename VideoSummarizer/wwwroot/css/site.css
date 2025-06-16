@@ -476,3 +476,273 @@ footer {
     margin-top: 100px;
   }
 }
+
+/* Добавьте это в site.css */
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: var(--second-color);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.new-request-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.new-request-btn:hover {
+    background-color: var(--hover-text-color);
+    transform: scale(1.02);
+}
+
+.history-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.history-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--primary-color);
+}
+
+.history-item:hover {
+    background-color: var(--animation-color);
+}
+
+.history-item.active {
+    background-color: var(--hover-text-color);
+    color: white;
+}
+
+.history-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.history-time {
+    font-size: 0.8em;
+    color: var(--small-text-color);
+}
+
+.history-item.active .history-time {
+    color: white;
+}
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    gap: 10px;
+}
+
+.account-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.login-btn {
+    flex: 1;
+    padding: 8px;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--hover-text-color);
+}
+
+.sidebar-toggle {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 1100;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: var(--button-background-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--hover-text-color);
+    transform: rotate(90deg);
+}
+
+.main-content {
+    margin-left: 300px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.expanded {
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 250px;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar:not(.collapsed) + .main-content {
+        margin-left: 250px;
+    }
+}
+
+
+
+.instructions-section {
+    margin: 50px 16vw;
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+.instructions-section h2 {
+    margin-bottom: 40px;
+    color: var(--text-color);
+    font-size: 2rem;
+}
+
+.instructions-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.instruction-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--second-color);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.instruction-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--second-color-dark);
+}
+
+.instruction-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.instruction-card:hover .instruction-icon {
+    transform: scale(1.1);
+}
+
+.instruction-card h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.instruction-card p {
+    color: var(--small-text-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .instructions-cards {
+        flex-direction: column;
+    }
+    
+    .instruction-card {
+        min-width: 100%;
+    }
+    
+    .instructions-section {
+        margin: 50px 5vw;
+    }
+}
+
+.history-list {
+  background-color: var(--second-color);
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.history-item {
+  color: var(--text-color);
+  background-color: var(--second-color-dark);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+}
+
+.history-item:hover {
+  background-color: #f5f5f5;
+}
+
+.history-item.active {
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
+}
+
+.history-title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-time {
+  font-size: 0.8em;
+  color: var(--small-text-color);
+  margin-top: 3px;
+}

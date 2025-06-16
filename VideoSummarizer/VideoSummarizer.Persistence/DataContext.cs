@@ -17,6 +17,7 @@ public class DataContext : DbContext
         Database.EnsureCreated();
     }
     public DbSet<DatabaseUser> Users { get; set; }
+    public DbSet<DatabaseSummarizeRequest> SummarizeRequests { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseNpgsql(_configuration["ConnectionStrings:Default"]);

@@ -5,27 +5,33 @@ using VideoSummarizer.UseCases.Services;
 using AssemblyAI;
 using Microsoft.AspNetCore.Identity;
 using VideoSummarizer.Core.Contracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace VideoSummarizer.Controllers;
 
 [Route("VideoProcessing")]
 public class VideoProcessingController : Controller
 {
-    private IFormFile file;
+    private IHttpContextAccessor _accessor;
     private readonly ILogger<HomeController> _logger;
     private readonly IConfiguration _configuration;
     private readonly IHttpContextAccessor _context;
     private readonly ITranscriptorService _transcriptor;
     private readonly ISummarizatorService _summarizator;
+    private readonly RequestService _requestService;
 
-    public VideoProcessingController(ILogger<HomeController> logger, IConfiguration configuration, IHttpContextAccessor context, ITranscriptorService transcriptor, ISummarizatorService summarizator)
+    public VideoProcessingController(IHttpContextAccessor accessor, ILogger<HomeController> logger, IConfiguration configuration, IHttpContextAccessor context,
+        ITranscriptorService transcriptor, ISummarizatorService summarizator, RequestService requestService)
     {
+        _accessor = accessor;
         _logger = logger;
         _configuration = configuration;
         _context = context;
         _transcriptor = transcriptor;
         _summarizator = summarizator;
+        _requestService = requestService;
     }
+
     [HttpGet]
     public IActionResult Index()
     {
@@ -76,17 +82,47 @@ public class VideoProcessingController : Controller
 
         if (showSourceText)
         {
+            var summary = await _summarizator.GetSummary(text, wordsCount, additionalTask);
+
+            if (string.IsNullOrEmpty(summary)) return BadRequest();
+
+            await _requestService.SaveRequest(new Core.DTO.NewRequestDto
+            {
+                Title = summary.Split(' ')[0],
+                UserLogin = _accessor.HttpContext.User.Identity.Name,
+                UploadUri = filePath,
+                Summary = text,
+                Transcription = text
+            });
+
+            
+
             return Json(new
             {
-                summary = await _summarizator.GetSummary(text, wordsCount, additionalTask),
+                summary = summary,
                 sourceText = text
             });
         }
         else
         {
+            var summary = await _summarizator.GetSummary(text, wordsCount, additionalTask);
+
+            if (string.IsNullOrEmpty(summary)) return BadRequest();
+
+            await _requestService.SaveRequest(new Core.DTO.NewRequestDto
+            {
+                Title = "",
+                UserLogin = User.Identity?.Name,
+                UploadUri = filePath,
+                Summary = text,
+                Transcription = ""
+            });
+
+            
+
             return Json(new
             {
-                summary = await _summarizator.GetSummary(text, wordsCount, additionalTask),
+                summary = summary,
                 sourceText = ""
             });
         }

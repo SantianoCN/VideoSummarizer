@@ -44,10 +44,17 @@ public class AuthorizationController : Controller
             Password = password
         }, ref token, ref errors);
 
-        if (string.IsNullOrEmpty(token)) 
+        if (string.IsNullOrEmpty(token))
         {
-            _context.HttpContext.Response.StatusCode = 403;
-            return BadRequest(errors.Count > 0 ? errors.Pop() : "Invalid login or password");
+            var data = new
+            {
+                Title = "Authorization fail",
+                Description = errors.Pop()
+            };
+            return new JsonResult(data)
+            {
+                StatusCode = 403
+            };
         }
 
         _context.HttpContext.Response.Headers.Add("Authorization", $"Bearer: {token}");
@@ -67,16 +74,13 @@ public class AuthorizationController : Controller
             return BadRequest("Passwords do not match");
         }
 
-        // Check if user already exists
         if (await _accountService.IsUserExists(model.Login))
         {
             return BadRequest("User with this login already exists");
         }
 
-        // Hash the password
         var (hash, salt) = await _hashService.HashPassword(model.Password);
 
-        // Create user in database (implementation depends on your repository)
         var result = await _accountService.RegisterUser(new UserRegisterDto
         {
             Username = model.Username,

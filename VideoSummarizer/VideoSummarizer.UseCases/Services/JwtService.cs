@@ -28,11 +28,12 @@ public class JwtService
             claims: new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Login),
+                new Claim(ClaimTypes.Name, user.Login),
                 new Claim(JwtRegisteredClaimNames.Sub, userId),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer)
             },
-            expires: DateTime.UtcNow.AddMinutes(2), // изменить!
+            expires: DateTime.UtcNow.AddDays(7),
             signingCredentials: new SigningCredentials(_options.Value.GetSymmetricSecurityKey(), algorithm: SecurityAlgorithms.HmacSha256)
         );
 

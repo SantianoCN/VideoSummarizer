@@ -4,6 +4,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="~/js/jrequest.js"></script>
 
+
 <h2 id="mainInfo">Загрузите видео или аудио файл для создания краткого содержания</h2>
 <section class="input-panel-area">
     <div class="mb-3">
@@ -23,8 +24,9 @@
         <label class="form-label">Исходный текст</label><br>
         <input type="checkbox" class="custom-checkbox" id="showSourceText" value="no" onclick="showSourceText()">
         <small>Показать субтитры из видео/аудио</small>
-    </div>
-    <div class="additional-area-checkbox">
+    using System.Diagnostics.Eventing.Reader;
+#line default
+<div class="additional-area-checkbox">
         <label class="form-label">Дополонительные опции</label><br>
         <input type="checkbox" onclick="useAdditionalTask()" class="custom-checkbox" id="useAdditionalTask" value="no">
         <small>Укажите Дополонительные параметры для работы слов текстом</small>
@@ -63,5 +65,56 @@
 <div class="notification-window" id="notification-window">
     <strong class="notification-text" id="notification-text"></strong>
 </div>
-<section class="user-documentation-area">
+
+
+<!-- Добавьте этот код в Index.cshtml перед footer или в подходящее место -->
+<section class="instructions-section">
+    <h2>Как это работает?</h2>
+    <div class="instructions-cards">
+        <div class="instruction-card">
+            <div class="instruction-icon">📁</div>
+            <h3>1. Выберите видео файл</h3>
+            <p>Загрузите видео или аудио файл в формате MP4, AVI, MOV, MP3 или других поддерживаемых форматов.</p>
+        </div>
+        <div class="instruction-card">
+            <div class="instruction-icon">⚙️</div>
+            <h3>2. Укажите опции</h3>
+            <p>Настройте параметры краткого содержания: количество слов, дополнительные пожелания к тексту.</p>
+        </div>
+        <div class="instruction-card">
+            <div class="instruction-icon">📋</div>
+            <h3>3. Получите результат</h3>
+            <p>Дождитесь обработки файла и скопируйте готовое краткое содержание в буфер обмена.</p>
+        </div>
+    </div>
 </section>
+
+
+<div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-request-btn" onclick="newRequest()">+ Новый запрос</button>
+            </div>
+            <div class="history-list">
+                <div class="history-item active">
+                    <div class="history-title">Текущий запрос</div>
+                    <div class="history-time">Сейчас</div>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <div class="account-icon">👤</div>
+                @if(!string.IsNullOrEmpty(User.Identity.Name)) {
+                    <button class="login-btn">@User.Identity.Name</button>
+                } else {
+                    <a href="/Authorization"><button class="login-btn">Войти</button></a>
+                }
+            </div>
+        </div>
+
+<script>
+
+    function newRequest() {
+        alert('Создание нового запроса');
+    }
+</script>

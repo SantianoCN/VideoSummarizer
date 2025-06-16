@@ -1,34 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "I:\\source\\Web\\DOTNET\\VideoSummarizer\\VideoSummarizer\\VideoSummarizer.csproj": {}
+    "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj": {}
   },
   "projects": {
-    "I:\\source\\Web\\DOTNET\\VideoSummarizer\\VideoSummarizer\\VideoSummarizer.csproj": {
+    "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "I:\\source\\Web\\DOTNET\\VideoSummarizer\\VideoSummarizer\\VideoSummarizer.csproj",
+        "projectUniqueName": "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj",
         "projectName": "VideoSummarizer",
-        "projectPath": "I:\\source\\Web\\DOTNET\\VideoSummarizer\\VideoSummarizer\\VideoSummarizer.csproj",
-        "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-        "outputPath": "I:\\source\\Web\\DOTNET\\VideoSummarizer\\VideoSummarizer\\obj\\",
+        "projectPath": "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/VideoSummarizer.csproj",
+        "packagesPath": "/home/nikita/.nuget/packages/",
+        "outputPath": "/run/media/nikita/EC14BD1314BCE22E/source/Web/DOTNET/VideoSummarizer/VideoSummarizer/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/nikita/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,7 +38,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -80,6 +73,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.16, 8.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -88,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

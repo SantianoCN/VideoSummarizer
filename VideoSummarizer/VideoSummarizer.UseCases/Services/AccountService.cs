@@ -32,7 +32,7 @@ public class AccountService
             await _repository.Create(model);
             return true;
         }
-        catch
+        catch (Exception ex)
         {
             return false;
         }

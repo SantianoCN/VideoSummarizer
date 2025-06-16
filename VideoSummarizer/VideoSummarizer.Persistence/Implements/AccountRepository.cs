@@ -9,10 +9,10 @@ public class AccountRepository : IRepository<UserRegisterDto, DatabaseUser>
 {
     private readonly ILogger<AccountRepository> _logger;
     private readonly DataContext _context;
-    public AccountRepository(ILogger<AccountRepository> logger, DataContext context) => (logger, context) = (_logger, _context);
+    public AccountRepository(ILogger<AccountRepository> logger, DataContext context) => (_logger, _context) = (logger, context);
     public async Task Create(UserRegisterDto value)
     {
-        _context.Users.Add(new DatabaseUser
+        await _context.Users.AddAsync(new DatabaseUser
         {
             UserId = Guid.NewGuid().ToString(),
             Username = value.Username,
@@ -20,6 +20,8 @@ public class AccountRepository : IRepository<UserRegisterDto, DatabaseUser>
             Password = value.Password,
             Salt = value.Salt
         });
+
+        await _context.SaveChangesAsync();
     }
 
     public async Task Delete(string uniqId)
@@ -31,9 +33,9 @@ public class AccountRepository : IRepository<UserRegisterDto, DatabaseUser>
         }
     }
 
-    public async Task<DatabaseUser?> Read(string uniqId)
+    public async Task<DatabaseUser?> Read(string login)
     {
-        var user = _context.Users.FirstOrDefault(u => u.UserId == uniqId);
+        var user = _context.Users.FirstOrDefault(u => u.Login == login);
         if (user != null)
         {
             return user;
